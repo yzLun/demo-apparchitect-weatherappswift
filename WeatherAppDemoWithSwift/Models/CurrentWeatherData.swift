@@ -15,6 +15,7 @@ class CurrentWeatherData: NSManagedObject {
 // Insert code here to add functionality to your managed object subclass
     class func saveCurrentWeatherData (response: Dictionary<String, AnyObject>?, completion: (Bool, NSError?) -> ()) {
         MagicalRecord.saveWithBlock({ (localContext: NSManagedObjectContext!) in
+            self.MR_truncateAllInContext(localContext)
             self.MR_importFromObject(response!["currently"]!, inContext: localContext)
             }, completion: completion)
     }

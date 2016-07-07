@@ -22,7 +22,7 @@ class DataStorageTest: XCTestCase {
     }
     
     func getMockWeatherInfomationData () -> Dictionary<String, AnyObject> {
-        /// Reading json file from unit testing bundle
+        // Reading json file from unit testing bundle
         let testBundle = NSBundle(forClass: self.dynamicType)
         let filePath = testBundle.pathForResource("weather", ofType: "json")
         
@@ -43,7 +43,6 @@ class DataStorageTest: XCTestCase {
         let completionExpectation: XCTestExpectation = self.expectationWithDescription("Data saving in background thread")
         let response = self.getMockWeatherInfomationData()
         CurrentWeatherData.saveCurrentWeatherData(response) { (success: Bool, error: NSError?) in
-            print(success)
             XCTAssert(success, "Currently weather data wasn't saved properly")
             completionExpectation.fulfill()
         }

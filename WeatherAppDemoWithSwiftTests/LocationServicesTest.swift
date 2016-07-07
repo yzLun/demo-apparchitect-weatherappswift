@@ -39,7 +39,7 @@ class LocationServicesTest: XCTestCase {
     }
     
     func test_LocationCapturedCorrectly () {
-        /// Simulate location of Sydney
+        // Simulate location of Sydney
         let sydneyLatitude = -33.8634
         let sydneyLongitude = 151.211
         
