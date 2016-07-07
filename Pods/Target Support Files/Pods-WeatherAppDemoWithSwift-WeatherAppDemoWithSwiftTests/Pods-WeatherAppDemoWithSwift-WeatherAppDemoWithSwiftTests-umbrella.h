@@ -1,0 +1,6 @@
+#import <UIKit/UIKit.h>
+
+
+FOUNDATION_EXPORT double Pods_WeatherAppDemoWithSwift_WeatherAppDemoWithSwiftTestsVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_WeatherAppDemoWithSwift_WeatherAppDemoWithSwiftTestsVersionString[];
+

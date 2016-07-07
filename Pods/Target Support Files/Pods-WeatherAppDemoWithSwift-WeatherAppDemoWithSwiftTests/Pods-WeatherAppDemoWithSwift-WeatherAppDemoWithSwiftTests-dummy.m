@@ -1,0 +1,5 @@
+#import <Foundation/Foundation.h>
+@interface PodsDummy_Pods_WeatherAppDemoWithSwift_WeatherAppDemoWithSwiftTests : NSObject
+@end
+@implementation PodsDummy_Pods_WeatherAppDemoWithSwift_WeatherAppDemoWithSwiftTests
+@end
