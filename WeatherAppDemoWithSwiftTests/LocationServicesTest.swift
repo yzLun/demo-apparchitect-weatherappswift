@@ -7,16 +7,22 @@
 //
 
 import XCTest
+import Swinject
 @testable import WeatherAppDemoWithSwift
 
 class LocationServicesTest: XCTestCase {
 
     var locationManager: WADLocation?
+    var container: Container!
     
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
-        self.locationManager = WADLocationServiceHelper()
+        
+        // Registration for the location manager
+        self.container = Container()
+        container.register(WADLocation.self) { _ in WADLocationServiceHelper()}
+        self.locationManager = container.resolve(WADLocation.self)
     }
     
     override func tearDown() {

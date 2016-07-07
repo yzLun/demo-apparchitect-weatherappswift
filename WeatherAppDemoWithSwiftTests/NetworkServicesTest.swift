@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import Swinject
 @testable import WeatherAppDemoWithSwift
 
 class NetworkServicesTest: XCTestCase {
@@ -14,11 +15,16 @@ class NetworkServicesTest: XCTestCase {
     var weatherServices: WADNetworking?
     let mockLocation = ["latitude" : -33.881361, "longitude" : 151.214544]
     let timeout = 10.0
+    var container: Container!
     
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
-        self.weatherServices = WADWeatherServices()
+        
+        // Registration for the weather services
+        self.container = Container()
+        container.register(WADNetworking.self) { _ in WADWeatherServices()}
+        self.weatherServices = container.resolve(WADNetworking.self)
     }
     
     override func tearDown() {
